@@ -1,0 +1,79 @@
+name: postman-collection-integration-test
+run-name: Integration testing - ${{ github.event.client_payload.branch }}
+
+on:
+  repository_dispatch:
+    types:
+      - integration-test
+
+concurrency: ci-${{ github.ref }}
+
+jobs:
+  init:
+    runs-on:
+      - self-hosted
+      - platform-eng-ent
+    environment: ${{ github.event.client_payload.branch  == 'master' && 'main' || github.event.client_payload.branch }}
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16.x
+      - name: Checkout newshub-postman collection
+        uses: actions/checkout@v4
+        with:
+          repository: "SPHTech/newshub-postman"
+          ref: ${{ github.event.client_payload.branch  == 'master' && 'main' || github.event.client_payload.branch }}
+          token: ${{ secrets.ORG_GITHUB_TOKEN }}
+      - name: Retrieve secret from vault
+        id: secrets
+        uses: hashicorp/vault-action@v2.4.0
+        with:
+          method: jwt
+          url: https://main.private.vault.0cbdb520-5871-4f8a-b02b-81e27b14da3f.aws.hashicorp.cloud:8200
+          path: github-actions
+          namespace: admin/engr/mobile-backend
+          role: github-oidc-newshub-environment
+          secrets: |
+            secrets-qa/data/postman/credentials ${{ github.event.client_payload.branch  == 'master' && 'main' || github.event.client_payload.branch }} | POSTMAN_ENV;
+      - name: Define the Environment to run
+        id: branch_check
+        run: |
+          echo ${{ toJson(steps.secrets.outputs.POSTMAN_ENV) }} > environment.json
+      - name: Configure AWS Credentials
+        id: creds
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.ROLE_ARN }}
+          role-session-name: gh-actions
+          aws-region: ap-southeast-1
+          output-credentials: true
+      - name: Install newman
+        run: |
+          npm install -g newman
+      - name: Run the API and Postman's tests
+        id: newman_run
+        run: |
+          ls -l "${GITHUB_WORKSPACE}"
+          newman --version
+          newman run "Backend.postman_collection.json" \
+                      --folder "IntegrationTests" \
+                      --environment "environment.json" --ignore-redirects \
+                      --global-var "AWS_ACCESS_KEY_ID=${{ steps.creds.outputs.aws-access-key-id }}" \
+                      --global-var "AWS_SECRET_ACCESS_KEY=${{ steps.creds.outputs.aws-secret-access-key }}" \
+                      --global-var "AWS_SESSION_TOKEN=${{ steps.creds.outputs.aws-session-token }}"
+                      --environment "environment.json" --ignore-redirects
+      - name: Slack Notification
+        if: failure()
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "text": "${{ github.repository }} - GitHub Action Integration Test Failure. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
