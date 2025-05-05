@@ -49,9 +49,12 @@ jobs:
           npx playwright test tests/1_SPH_Login_Auth.spec.ts
           npx playwright test tests/2_PDF.spec.ts
 
-      - name: Upload test results (optional)
-        if: always()
+      - name: Generate Allure Report
+        run: |
+          npx allure generate --clean allure-results -o allure-report
+
+      - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: playwright-report/
+          name: allure-report
+          path: allure-report/
