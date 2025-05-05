@@ -16,7 +16,7 @@ on:
           - main
 
 jobs:
-  Run-Playwright for - ${{ github.event.inputs.environment || github.ref_name }} :
+  Run-Playwright:
     runs-on: ubuntu-latest
     env:
       ENVIRONMENT: ${{ github.event.inputs.environment }}
