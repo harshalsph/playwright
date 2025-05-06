@@ -12,7 +12,7 @@ test('TC1-Login/Signout', async ({ request }) => {
             state: 'st',
         },
     });
-    expect(response.status()).toBe(200);
+    expect(response.status()).toBe(300);
 });
 
 let stateToken: String; // Declare stateToken in the outer scope.
