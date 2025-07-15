@@ -1,0 +1,27 @@
+Test case 5 ======================================================
+Authcode:- WOUE1rn-PiD5d8soBuGDUh063XstzFoc4R4modLi6rw
+https://dsnewsapi.sphdigital.com
+{
+  code: 200,
+  message: 'Successfully logged in',
+  data: {
+    token: 'eyJhbGciOiJSUzUxMiJ9.eyJhb3Zpc2l0b3JpZCI6InU1d3pENFQrelFobUZkZ3VIQWVDYVZaSEVGYXBkMHpTQ2JxbGF3SjRUNTQ9IiwiYXV0aHNlc3Npb24iOiJlMzczYjViNi03MDVlLTRjNTQtOTgxOC04NGYwYjYwYTVlOGEiLCJkZXZpY2VpZCI6IjlFQTQ0RUU2LTUzNjUtNEJENC05NUVFLThENDE2MjQxN0VBNSIsImV4cCI6MTc1MjU2MzIzOCwiaWF0IjoxNzUyNTYyMzM4LCJwZXJtaXNzaW9ucyI6eyJidCI6WyJkaWdpdGFsIiwiZXBhcGVyIl0sInNtIjpbImRpZ2l0YWwiLCJlcGFwZXIiXSwic3QiOlsiZGlnaXRhbCIsImVwYXBlciJdLCJ6YiI6WyJkaWdpdGFsIiwiZXBhcGVyIl19LCJwcm92aWRlcnR5cGUiOiJzcGgiLCJwdXNoc2VnbWVudHMiOm51bGwsInN1YiI6ImYxYTJjNDZlLTBkZTktNDE4Yy1iMGEwLTlkYTRiNmU0NmMxOSIsInVzZXJuYW1lIjoiaGFyc2hhbC5zcGhAcGVyZW5uaWFsc3lzLmNvbSIsInVzZXJ0eXBlIjoiemJfcHJlbWl1bSIsInV0YSI6IiJ9.1ldvUep7i4PVAUDBpSZHuILM5yNlxj-2awEa_AW3efWpH8sR7h-_wI5kp9IQIbVZs98K4CsqhnWUYP_34lT6UmiNj8AOTSwP2XQZc55F7Me8xc-E1w3y9ZBe2hQvo35OgjohXOLVcOm0hTaMZHE2N1nftwbwJxfEXTlw7jM3KcQb9UjwmySIvPeb2Itn5DcZ_tzCW2jjZk7GKN2hDcjQJFxuCL0aYRERYWKCfJb-dCUU4JG6yI2bAmoufCMB68pPRLbo1zk8PVApQfuc_CpsCSQcXcyCezfOsfsDfmsrwIfRSIiwCCL9f7IoZH_TYa194Y_wPahGGnV0sysPqp4HCw',
+    aoVisitorId: 'u5wzD4T+zQhmFdguHAeCaVZHEFapd0zSCbqlawJ4T54=',
+    linkedUserId: '(not set)',
+    userType: 'zb_premium',
+    mySPHID: 'harshal.sph@perennialsys.com',
+    emailAddress: 'harshal.sph@perennialsys.com',
+    contactKey: 'harshal.sph@perennialsys.com',
+    services: [ [Object], [Object], [Object], [Object] ],
+    serviceflags: 'bts|tm_all|bh_all|zbs|zb_all|bh_online|st_premium|stp|st_all|wb_all|sm_all|cir_tm_online|reg_bt|cir_sm_online|bt_all',
+    gaUserType: 2,
+    visitorCategory: 'subscriber',
+    providerType: 'sph',
+    username: 'harshal.sph@perennialsys.com',
+    mySPHRefreshToken: 'c8Qlfh3klsD8j_E59LAT6_YrlFGTPLjr2f0YRUh6Sfw',
+    sessionId: 'e373b5b6-705e-4c54-9818-84f0b60a5e8a',
+    showConsent: false,
+    subscriberType: 2
+  }
+}
+Token: eyJhbGciOiJSUzUxMiJ9.eyJhb3Zpc2l0b3JpZCI6InU1d3pENFQrelFobUZkZ3VIQWVDYVZaSEVGYXBkMHpTQ2JxbGF3SjRUNTQ9IiwiYXV0aHNlc3Npb24iOiJlMzczYjViNi03MDVlLTRjNTQtOTgxOC04NGYwYjYwYTVlOGEiLCJkZXZpY2VpZCI6IjlFQTQ0RUU2LTUzNjUtNEJENC05NUVFLThENDE2MjQxN0VBNSIsImV4cCI6MTc1MjU2MzIzOCwiaWF0IjoxNzUyNTYyMzM4LCJwZXJtaXNzaW9ucyI6eyJidCI6WyJkaWdpdGFsIiwiZXBhcGVyIl0sInNtIjpbImRpZ2l0YWwiLCJlcGFwZXIiXSwic3QiOlsiZGlnaXRhbCIsImVwYXBlciJdLCJ6YiI6WyJkaWdpdGFsIiwiZXBhcGVyIl19LCJwcm92aWRlcnR5cGUiOiJzcGgiLCJwdXNoc2VnbWVudHMiOm51bGwsInN1YiI6ImYxYTJjNDZlLTBkZTktNDE4Yy1iMGEwLTlkYTRiNmU0NmMxOSIsInVzZXJuYW1lIjoiaGFyc2hhbC5zcGhAcGVyZW5uaWFsc3lzLmNvbSIsInVzZXJ0eXBlIjoiemJfcHJlbWl1bSIsInV0YSI6IiJ9.1ldvUep7i4PVAUDBpSZHuILM5yNlxj-2awEa_AW3efWpH8sR7h-_wI5kp9IQIbVZs98K4CsqhnWUYP_34lT6UmiNj8AOTSwP2XQZc55F7Me8xc-E1w3y9ZBe2hQvo35OgjohXOLVcOm0hTaMZHE2N1nftwbwJxfEXTlw7jM3KcQb9UjwmySIvPeb2Itn5DcZ_tzCW2jjZk7GKN2hDcjQJFxuCL0aYRERYWKCfJb-dCUU4JG6yI2bAmoufCMB68pPRLbo1zk8PVApQfuc_CpsCSQcXcyCezfOsfsDfmsrwIfRSIiwCCL9f7IoZH_TYa194Y_wPahGGnV0sysPqp4HCw

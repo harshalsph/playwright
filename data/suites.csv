@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","446","TC4-Enter login details state token","dev","Tue Jul 15 06:52:14 UTC 2025","passed","Tue Jul 15 06:52:14 UTC 2025","Create Auth Token","1_SPH_Login_Auth.spec.ts","",""
+"","3521","TC6 - Paid article","dev","Tue Jul 15 06:52:20 UTC 2025","passed","Tue Jul 15 06:52:23 UTC 2025","","2_PDF.spec.ts","",""
+"","569","TC3-MySPH login","dev","Tue Jul 15 06:52:13 UTC 2025","passed","Tue Jul 15 06:52:14 UTC 2025","Create Auth Token","1_SPH_Login_Auth.spec.ts","",""
+"","385","TC2-Load Login Form & Get State Token From Redirect","dev","Tue Jul 15 06:52:13 UTC 2025","passed","Tue Jul 15 06:52:13 UTC 2025","Create Auth Token","1_SPH_Login_Auth.spec.ts","",""
+"","744","TC7- Access PDF","dev","Tue Jul 15 06:52:23 UTC 2025","passed","Tue Jul 15 06:52:24 UTC 2025","","2_PDF.spec.ts","",""
+"","3352","TC5-Mobile login","dev","Tue Jul 15 06:52:14 UTC 2025","passed","Tue Jul 15 06:52:18 UTC 2025","Create Auth Token","1_SPH_Login_Auth.spec.ts","",""
+"","475","TC1-Login/Signout","dev","Tue Jul 15 06:52:13 UTC 2025","passed","Tue Jul 15 06:52:13 UTC 2025","Create Auth Token","1_SPH_Login_Auth.spec.ts","",""
