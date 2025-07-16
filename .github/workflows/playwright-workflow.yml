@@ -39,11 +39,8 @@ jobs:
             npm install
           fi
           
-      - name: Install Allure dependencies
-        run: npm install -D allure-playwright allure-commandline
-
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium
 
       - name: Run Playwright tests
         run: |
