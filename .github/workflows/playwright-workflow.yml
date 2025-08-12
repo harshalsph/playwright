@@ -50,3 +50,9 @@ jobs:
           export TEST_ENV=$ENVIRONMENT
           npx playwright test tests/1_SPH_Login_Auth.spec.ts
           npx playwright test tests/2_PDF.spec.ts
+      - name: Upload Playwright screenshots
+        uses: actions/upload-artifact@v4
+        with:
+            name: playwright-screenshots
+            path: test-results/screenshots/**/*.png
+    
