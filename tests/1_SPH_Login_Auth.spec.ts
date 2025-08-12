@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import {test, expect, request} from '@playwright/test';
 import { sharedData, envData } from './globalData';
+import path from 'path';
 
 test.describe.serial('Create Auth Token', () => { 
 test('TC1-Login/Signout', async ({ request }) => {
@@ -130,4 +131,16 @@ test('TC3-MySPH login', async ({ request }) => {
     // ✅ Write it back
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   });
+    
+test('screenshot always', async ({ page }) => {
+  await page.goto('https://playwright.dev');
+  
+  // Save screenshot in test-results/screenshots
+  const screenshotDir = path.join(process.cwd(), 'playwright-report', 'screenshots');
+  await page.screenshot({ 
+    path: `${screenshotDir}/homepage.png`, 
+    fullPage: true 
+  });
+});
 })
+
