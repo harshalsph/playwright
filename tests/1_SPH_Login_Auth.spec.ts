@@ -136,11 +136,11 @@ test('screenshot always', async ({ page }) => {
   await page.goto('https://playwright.dev');
   
   // Save screenshot in test-results/screenshots
-  const screenshotDir = path.join(process.cwd(), 'playwright-report', 'screenshots');
-  await page.screenshot({ 
-    path: `${screenshotDir}/homepage.png`, 
-    fullPage: true 
+  await page.screenshot({
+    path: 'Screenshots/homepage.png', // folder + file name
+    fullPage: true
   });
 });
 })
+
 
